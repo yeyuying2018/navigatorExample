@@ -11,10 +11,10 @@ export const AppStackNavigator = StackNavigator({
     Page1: {
         screen: Page1,
         navigationOptions: {
-            header: null
+            title: 'Page1'
         }
     },
     Page2: {
         screen: Page2
     }
-},)
+})
