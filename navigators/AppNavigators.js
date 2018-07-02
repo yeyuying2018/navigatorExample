@@ -66,7 +66,11 @@ export const DrawerNav = DrawerNavigator({
                     <DrawerItems {...props} />
                 </SafeAreaView>
             </ScrollView>
-        )
+        ),
+        initialRouteName: 'Page5',
+        contentOptions:{
+            activeTintColor: 'green'
+        }
     }
 )
 export const AppTabNavigator = TabNavigator({
