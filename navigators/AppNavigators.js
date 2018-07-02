@@ -1,4 +1,4 @@
-import {StackNavigator, TabNavigator, TabBarBottom,DrawerNavigator} from "react-navigation"
+import {StackNavigator, TabNavigator, TabBarBottom, DrawerNavigator, SafeAreaView, DrawerItems} from "react-navigation"
 import HomePage from '../pages/homePage';
 import Page1 from '../pages/Page1';
 import Page2 from '../pages/Page2';
@@ -6,7 +6,7 @@ import Page3 from '../pages/Page3';
 import Page4 from '../pages/Page4';
 import Page5 from '../pages/Page5';
 import React from 'react';
-import {Button, Platform} from 'react-native';
+import {Button, Platform, ScrollView} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
@@ -59,7 +59,16 @@ export const DrawerNav = DrawerNavigator({
 
         }
     }
-})
+}, { //自定义/*这里的自定义在只改变背景色*/
+        contentComponent: (props) => (
+            <ScrollView style={{backgroundColor: 'red',flex:1}}>
+                <SafeAreaView forceInset={{top: 'always', horizontal:'never'}}>
+                    <DrawerItems {...props} />
+                </SafeAreaView>
+            </ScrollView>
+        )
+    }
+)
 export const AppTabNavigator = TabNavigator({
     Page1: {
         screen:Page1,
