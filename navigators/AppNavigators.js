@@ -1,11 +1,15 @@
-import {StackNavigator, TabNavigator, TabBarBottom} from "react-navigation"
+import {StackNavigator, TabNavigator, TabBarBottom,DrawerNavigator} from "react-navigation"
 import HomePage from '../pages/homePage';
 import Page1 from '../pages/Page1';
 import Page2 from '../pages/Page2';
 import Page3 from '../pages/Page3';
+import Page4 from '../pages/Page4';
+import Page5 from '../pages/Page5';
 import React from 'react';
 import {Button, Platform} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 class TabBarComponent extends React.Component {
     constructor(props){
         super(props);
@@ -26,6 +30,36 @@ class TabBarComponent extends React.Component {
         />
     }
 }
+export const DrawerNav = DrawerNavigator({
+    Page4: {
+        screen: Page4,
+        navigationOptions:{
+            drawerLabel: 'Page4',
+            //drawerIcon:({tintColor})=>(
+            //    <MaterialIcons
+            //        name={"drafts"}
+            //        size={24}
+            //        style={{color: tintColor}} />
+            //)
+
+
+        }
+    },
+    Page5: {
+        screen: Page5,
+        navigationOptions:{
+            drawerLabel: 'Page5',
+            //drawerIcon:({tintColor})=>(
+            //    <MaterialIcons
+            //        name={"drafts"}
+            //        size={24}
+            //        style={{color: tintColor}} />
+            //)
+
+
+        }
+    }
+})
 export const AppTabNavigator = TabNavigator({
     Page1: {
         screen:Page1,
@@ -127,6 +161,12 @@ export const AppStackNavigator = StackNavigator({
         screen: AppTabNavigator,
         navigationOptions: {
             title: 'THIS IS TabNavigator'
+        }
+    },
+    DrawerNav: {
+        screen: DrawerNav,
+        navigationOptions: {
+            title: 'THIS IS DrawerNav'
         }
     }
 },{
