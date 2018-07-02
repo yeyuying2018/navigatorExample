@@ -14,4 +14,8 @@ export const AppStackNavigator = StackNavigator({
     Page2: {
         screen: Page2
     }
+}, {
+    navigationOptions: {
+        header: null
+    }
 })
