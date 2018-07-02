@@ -3,14 +3,6 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import {AppStackNavigator} from './navigators/AppNavigators';
+import {AppStackNavigator, AppTabNavigator} from './navigators/AppNavigators';
 export default AppStackNavigator;
 
