@@ -3,6 +3,7 @@ import {StackNavigator} from "react-navigation"
 import HomePage from '../pages/homePage';
 import Page1 from '../pages/Page1';
 import Page2 from '../pages/Page2';
+import Page3 from '../pages/Page3';
 
 export const AppStackNavigator = StackNavigator({
     HomePage: {
@@ -18,6 +19,17 @@ export const AppStackNavigator = StackNavigator({
         screen: Page2,
         navigationOptions: {
             title: 'Page2'
+        }
+    },
+    Page3: {
+        screen: Page3,
+        navigationOptions: (props) => {
+            const {navigation} = props;
+            const {state, setParams} = navigation;
+            const {params} = state;
+            return {
+                title: params.title ? params.title : 'THIS IS Page3',
+            }
         }
     }
 },{
